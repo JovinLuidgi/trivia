@@ -10,11 +10,12 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 
 ### Goal 1: Render a question from sample_data.json on the screen.
 
-- [ ] In App.jsx in the App component, add a variable to set the current question number to 0.
 - [ ] In App.jsx, create a Question component.
+- [ ] Render an instance of `<Question />` inside of `<App />`.
 - [ ] Add props to `<Question />` with the text "Question goes here".
-- [ ] Render `<Question />` inside of App.
+- [ ] In `<App />`, add a variable to set the current question number to 0.
 - [ ] Replace "Question goes here" with the `question.text` field found in data for the first question.
+  - [ ] HINT: Use the question number variable you just wrote.
 - [ ] BONUS: Add styling to your app.
 
 >![Day 1.0 goal](https://i.imgur.com/eTZAXGk.png)
@@ -23,7 +24,7 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 
 - [ ] In App.jsx, create a NextQuestion component.
 - [ ] Write the JSX to display a button for the user to click for the next question. (It will not work yet.)
-- [ ] Render `<NextQuestion />` inside of App.
+- [ ] Render an instance of `<NextQuestion />` inside of `<App />`.
 
 >![Day 1.5 goal](https://i.imgur.com/o4MzPjL.png)
 
@@ -33,8 +34,8 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 ### Goal 1: Render the answer choices from sample_data.json on the screen.
 
 - [ ] In App.jsx, create an Answer component.
+- [ ] Render an instance of `<Answer />` inside of `<Question />`.
 - [ ] Add props to `<Answer />` with the text "Answer goes here".
-- [ ] Render `<Answer />` inside of `<Question />`.
   - [ ] Pass props for the answer choices into `<Question />`.
   - [ ] Use those props to render the Answer components inside `<Question />` to display the answer choices.
 - [ ] Refactor to use map to map over all answer choices.
@@ -43,9 +44,9 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 
 ### Goal 2: Render a button on the screen that reveals the correct answer when clicked.
 
-- [ ] Add state to `<App />` using the `useState` React hook to keep track of if the question is answered.
-- [ ] Add a button to the App component that updates state to `isAnswered` when clicked.
-- [ ] Set the state of `isAnswered` to display the correct answer choice.
+- [ ] Using `useState` in `<App />`, create a boolean state variable called `isAnswered` to keep track of whether the correct answer is revealed.
+- [ ] Add a button to the App component that will update the state to display the correct answer when it is clicked.
+- [ ] Create an onClick function that sets the state to display the correct answer choice when your button is clicked.
 
 >![Day 2.5 goal - unanswered](https://i.imgur.com/JI6GroE.png)
 >![Day 2.5 goal - answered](https://i.imgur.com/rufYX84.png)
@@ -60,7 +61,7 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 - [ ] Create a function that updates the state to the next question number.
 - [ ] Make a prop on `<NextQuestion />` to pass the prop down to the button element to call that function when the button is clicked.
 - [ ] Check that every part of your question and answer updates to reflect the current question number.
-- [ ] Reset the state of `isAnswered` when the Next Question button is clicked.
+- [ ] Reset the state of `isAnswered` when the Next Question button is clicked so the correct answer stops being displayed.
 - [ ] BONUS: Add [conditional rendering](https://reactjs.org/docs/conditional-rendering.html) to hide `<NextQuestion />` when there are no more next questions.
 
 >![Day 3.0 goal](https://i.imgur.com/fetraPF.png)
@@ -68,7 +69,8 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 
 ### Goal 2: Add functionality so that when the user clicks on an answer choice, the correct answer appears.
 
-- [ ] Inside the map function for the Answer components, add an event handler that updates the state of `isAnswered` to be the choice that the user clicks.
+- [ ] Using `useState` in `<App />`, create a state variable to keep track of which answer choice the user clicks.
+  - [ ] Inside the map function for the Answer components, add an event handler that updates the state to be the choice that the user clicks.
   - [ ] HINT: Use props to pass down the state from `<App />`.
   - [ ] HINT: Don't forget to pass your `onClick` down as a prop as well.
 - [ ] Inside `<App />` (below state and above return), write a conditional that checks if the answer clicked is the correct answer.
