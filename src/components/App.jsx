@@ -48,6 +48,13 @@ function App() {
           </div>
         ) : null;
       })}
+      {/**
+        add a "ternary operator" here that says,
+          if the question num is higher than the number of question
+          then show a messsage saying we're out of questions
+
+          otherwise show nothing
+      */}
     </div>
   );
 }
