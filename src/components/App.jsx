@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { getLateBoundPropertyNames } from "tsutils";
 import "../css/App.css";
-import questions from "../sample_data.json";
+import data from "../sample_data.json";
 
 function Question(props) {
   return <p>{props.question.text}</p>;
@@ -16,28 +16,50 @@ function Answer(props) {
 }
 
 function App() {
-  let questionNum = 0;
+  let [questionNum, setQuestionNum] = useState(0);
   let [viewAnswer, setViewAnswer] = useState(false);
-
   return (
     <div className="app">
-      {questions.map((displayQuestion) => (
-        <div>
-          <Question question={displayQuestion.question} />
-          <NextQuestion handleClick={() => setViewAnswer(!viewAnswer)} />
-          {viewAnswer && (
-            <Answer
-              answer={
-                displayQuestion.question.choices[
-                  displayQuestion.question.correct_choice_index
-                ]
-              }
+      {data.map((displayQuestion, indexOfQuestionTheLoopIsOnNow) => {
+        console.log(displayQuestion);
+        /**
+         * indexOfQuestionTheLoopIsOnNow = 0 // false
+         * indexOfQuestionTheLoopIsOnNow = 1 // true
+         * indexOfQuestionTheLoopIsOnNow = 2 // false
+         * indexOfQuestionTheLoopIsOnNow === questionNum ? (
+         *   <div>Example</div>
+         * ) : null;
+         */
+        return indexOfQuestionTheLoopIsOnNow === questionNum ? (
+          <div>
+            <Question question={displayQuestion.question} />
+            {displayQuestion.question.choices.map((answer) => (
+              <Answer answer={answer} />
+            ))}
+            <button onClick={() => setViewAnswer(!viewAnswer)}>
+              {" "}
+              view answer{" "}
+            </button>
+            <NextQuestion
+              handleClick={() => {
+                setQuestionNum(questionNum + 1);
+                // change the view answer state back to its default here
+              }}
             />
-          )}
-        </div>
-      ))}
+            {viewAnswer && (
+              <Answer
+                answer={
+                  displayQuestion.question.choices[
+                    displayQuestion.question.correct_choice_index
+                  ]
+                }
+              />
+            )}
+          </div>
+        ) : null;
+      })}
     </div>
   );
 }
-
+/*() => setViewAnswer(!viewAnswer) */
 export default App;
