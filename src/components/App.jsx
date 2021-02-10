@@ -21,15 +21,6 @@ function App() {
   return (
     <div className="app">
       {data.map((displayQuestion, indexOfQuestionTheLoopIsOnNow) => {
-        console.log(displayQuestion);
-        /**
-         * indexOfQuestionTheLoopIsOnNow = 0 // false
-         * indexOfQuestionTheLoopIsOnNow = 1 // true
-         * indexOfQuestionTheLoopIsOnNow = 2 // false
-         * indexOfQuestionTheLoopIsOnNow === questionNum ? (
-         *   <div>Example</div>
-         * ) : null;
-         */
         return indexOfQuestionTheLoopIsOnNow === questionNum ? (
           <div>
             <Question question={displayQuestion.question} />
@@ -37,8 +28,7 @@ function App() {
               <Answer answer={answer} />
             ))}
             <button onClick={() => setViewAnswer(!viewAnswer)}>
-              {" "}
-              view answer{" "}
+              view answer
             </button>
             <NextQuestion
               handleClick={() => {
