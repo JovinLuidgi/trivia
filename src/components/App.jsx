@@ -2,18 +2,9 @@ import React, { Component, useState } from "react";
 import { getLateBoundPropertyNames } from "tsutils";
 import "../css/App.css";
 import data from "../sample_data.json";
-
-function Question(props) {
-  return <p>{props.question.text}</p>;
-}
-
-function NextQuestion(props) {
-  return <button onClick={props.handleClick}> next question </button>;
-}
-
-function Answer(props) {
-  return <p>{props.answer}</p>;
-}
+import Question from "./Question";
+import NextQuestion from "./Nextquestion";
+import Answer from "./Answer";
 
 function App() {
   let [questionNum, setQuestionNum] = useState(0);

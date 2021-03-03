@@ -14,5 +14,18 @@
       "text": "What was the original name of Code Nation when it was founded?",
       "user_id": "ZbCvDadaM0SD9YjAXrHMEDLVGoj2"
     }
+  },
+  {
+    "question": {
+      "choices": [
+        "Dark Magician",
+        "Blue Eyes White Dragon",
+        "Time Wizard",
+        "Harpy Lady"
+      ],
+      "correct_choice_index": 0,
+      "text": "What Yugi's signature card?",
+      "user_id": "ZbCvDadaM0SD9YjAXrHMEDLVGoj2"
+    }
   }
 ]
