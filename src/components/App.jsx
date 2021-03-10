@@ -5,12 +5,14 @@ import data from "../sample_data.json";
 import Question from "./Question";
 import NextQuestion from "./Nextquestion";
 import Answer from "./Answer";
+import Image from "./Image";
 
 function App() {
   let [questionNum, setQuestionNum] = useState(0);
   let [viewAnswer, setViewAnswer] = useState(false);
   return (
     <div className="app">
+      <Image cname="Dark Magician" />
       {data.map((displayQuestion, indexOfQuestionTheLoopIsOnNow) => {
         return indexOfQuestionTheLoopIsOnNow === questionNum ? (
           <div>
