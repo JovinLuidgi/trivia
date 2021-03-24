@@ -15,11 +15,14 @@ function Image(props) {
         if (response.ok) {
           return response.json();
         }
+
+        throw response;
       })
       .then((data) => {
         console.log(data.data[0]);
         setCardName(data);
-      });
+      })
+      .catch(() => {});
   }, []);
   return <img src={cardname?.data[0].card_images[0].image_url} />;
   // return null;

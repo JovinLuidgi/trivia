@@ -6,13 +6,19 @@ import Question from "./Question";
 import NextQuestion from "./Nextquestion";
 import Answer from "./Answer";
 import Image from "./Image";
+import CorrectAnswer from "./CorrectAnswer";
+import Title from "./Title";
 
 function App() {
   let [questionNum, setQuestionNum] = useState(0);
   let [viewAnswer, setViewAnswer] = useState(false);
+  let [quizShowing, setQuizShow] = useState(false);
+  //if (quizShowing === false) {
+  //  return <Title />;
+  //}
+
   return (
-    <div className="app">
-      <Image cname="Dark Magician" />
+    <div className="app" style={{ textAlign: "center" }}>
       {data.map((displayQuestion, indexOfQuestionTheLoopIsOnNow) => {
         return indexOfQuestionTheLoopIsOnNow === questionNum ? (
           <div>
@@ -26,11 +32,13 @@ function App() {
             <NextQuestion
               handleClick={() => {
                 setQuestionNum(questionNum + 1);
+                setViewAnswer(false);
                 // change the view answer state back to its default here
               }}
             />
+            <br />
             {viewAnswer && (
-              <Answer
+              <CorrectAnswer
                 answer={
                   displayQuestion.question.choices[
                     displayQuestion.question.correct_choice_index

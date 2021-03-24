@@ -2,7 +2,7 @@
   {
     "question": {
       "choices": [
-        "Blue Eyes White Dragon",
+        "Blue-Eyes White Dragon",
         "Dark Magician",
         "Black Rose Dragon",
         "Stardust Dragon"
@@ -40,9 +40,35 @@
   },
   {
     "question": {
-      "choices": ["Yugi", "Seto", "Pegasus", "Joey"],
-      "correct_choice_index": 2,
-      "text": "How has a Golden Eye?",
+      "choices": [
+        "Toon Dark Rabbit",
+        "Thousand-Eyes Restrict",
+        "Relinquished",
+        "Toon World"
+      ],
+      "correct_choice_index": 1,
+      "text": "What is Pegasus's signature card?",
+      "user_id": "ZbCvDadaM0SD9YjAXrHMEDLVGoj2"
+    }
+  },
+  {
+    "question": {
+      "choices": ["Jinzo", "Fortess Whale", "The Legendary Fisherman", "Umi"],
+      "correct_choice_index": 3,
+      "text": "What's Mako's signature card?",
+      "user_id": "ZbCvDadaM0SD9YjAXrHMEDLVGoj2"
+    }
+  },
+  {
+    "question": {
+      "choices": [
+        "Metaphys Daedalus",
+        "Insect Queen",
+        "Great Moth",
+        "Strike Ninja"
+      ],
+      "correct_choice_index": 1,
+      "text": "What's Weevil Underwood's signature card?",
       "user_id": "ZbCvDadaM0SD9YjAXrHMEDLVGoj2"
     }
   }
